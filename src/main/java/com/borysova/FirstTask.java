@@ -11,13 +11,10 @@ public class FirstTask {
             new Names(4, "Oksana"), new Names(5, "Maria"));
 
     public static void main(String[] args) {
-        List<Names> result = names.stream()
+        String result = names.stream()
                 .filter(person -> person.getId() % 2 != 0)
-                .collect(Collectors.toList());
-
-        String stringResult = result.stream()
                 .map(Names::toString)
                 .collect(Collectors.joining(", "));
-        System.out.println(stringResult);
+        System.out.println(result);
     }
 }

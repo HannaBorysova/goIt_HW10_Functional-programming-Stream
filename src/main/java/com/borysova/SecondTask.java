@@ -10,11 +10,10 @@ public class SecondTask {
             Arrays.asList("Anna", "Marina", "Petro", "Oksana", "Maria");
 
     public static void main(String[] args) {
-        final List<String> result = names.stream()
-                .map(name -> name.toUpperCase())
+        final String result = names.stream()
+                .map(String::toUpperCase)
                 .sorted(Comparator.reverseOrder())
-                .collect(Collectors.toList());
-        String stringResult = result.stream().collect(Collectors.joining(", "));
-        System.out.println(stringResult);
+                .collect(Collectors.joining(", "));
+        System.out.println(result);
     }
 }
