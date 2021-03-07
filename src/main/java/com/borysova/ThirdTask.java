@@ -10,7 +10,7 @@ public class ThirdTask {
         String[] array = new String[]{"1, 2, 0", "4, 5"};
         List<String> arrayList= Arrays.asList(array);
         String result = arrayList.stream()
-                .flatMap((element) -> Arrays.asList(element.split(", ")).stream())
+                .flatMap((element) -> Arrays.stream(element.split(", ")))
                 .sorted()
                 .collect(Collectors.joining(", "));
         System.out.println(result);
